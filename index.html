@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wanna go out? 🥺</title>
+  <style>
+    body {
+      background-color: #fff0f6;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #ff69b4;
+      margin-bottom: 40px;
+    }
+    button {
+      font-size: 1.5em;
+      padding: 15px 30px;
+      margin: 10px;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    #yesBtn {
+      background-color: #ff85c1;
+      color: white;
+    }
+    #noBtn {
+      background-color: #ffc6e2;
+      color: white;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <h1>Wanna go out tomorrow, babyyyy 🥺?</h1>
+  <button id="yesBtn">Yes 💖</button>
+  <button id="noBtn">No 😢</button>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+
+    let shrinkCount = 0;
+
+    noBtn.addEventListener('mouseenter', () => {
+      const maxShrinks = 5;
+      if (shrinkCount < maxShrinks) {
+        noBtn.style.transform = `scale(${1 - shrinkCount * 0.15})`;
+        shrinkCount++;
+      } else {
+        noBtn.style.display = "none";
+      }
+    });
+
+    yesBtn.addEventListener('click', () => {
+      document.body.innerHTML = `
+        <h1 style="color:#ff69b4; font-size: 2.3em;">YEAYYYY FINALLYYY 🙂‍↕️🙂‍↕️🫶🏻🫶🏻</h1>
+        <p style="font-size: 1.5em; color:#ff4da6;">see you at 2.45, I'll come to ur house,<br>we'll go to our cafe 🙂‍↔️🙂‍↔️</p>
+      `;
+    });
+  </script>
+</body>
+</html>
